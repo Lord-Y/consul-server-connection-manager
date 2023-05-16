@@ -51,6 +51,7 @@ func (a *ACLs) Login(ctx context.Context) (string, string, error) {
 		Partition:   a.cfg.Partition,
 		Datacenter:  a.cfg.Datacenter,
 	}
+	fmt.Printf("acl login request %s", req)
 	start := a.clock.Now()
 	resp, err := a.client.Login(ctx, req)
 	if err != nil {
